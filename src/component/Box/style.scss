@@ -1,3 +1,16 @@
+@import "../../mixin";
+.col {
+  margin-bottom: 3%;
+}
+@include tablet {
+  .col2 {
+    width: calc(50% - 10px);
+  }
+  .col3 {
+    width: calc((100% / 3) - 6px);
+  }
+}
+
 .title {
   background: #333;
   color: #fff;
@@ -12,7 +25,8 @@
 .desc {
   border: 1px solid #ddd;
   padding: 20px 20px;
-  clear: left;
+  height: calc(100% - 38px);
+  // clear: left;
   display: flex;
   align-items: center;
   box-sizing: border-box;

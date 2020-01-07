@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import Box from "./Box";
-import { Container } from "./StyledComponents";
+import { Container, Flexbox } from "./StyledComponents";
 
 const Section = ({ name, logo, desc }) => {
   useEffect(() => {});
+  const col = desc.length % 2 === 0 ? "col2" : "col3";
   const Boxes = () => {
     return desc.map((desc, i) => (
-      <Box key={i} title={desc.title} list={desc.list} />
+      <Box key={i} title={desc.title} list={desc.list} col={col} />
     ));
   };
   const logoUrl = require(`../img/${logo}.png`);
@@ -19,7 +20,7 @@ const Section = ({ name, logo, desc }) => {
         <div className="feature">
           <img src={logoUrl} alt={alert} className="logo" />
         </div>
-        <div className="row">{Boxes()}</div>
+        <Flexbox>{Boxes()}</Flexbox>
       </Container>
     </section>
   );

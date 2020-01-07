@@ -6,10 +6,9 @@
 }
 .main {
   .process {
-    width: calc(50% - 1px);
+    width: calc(50% - 0.5px);
     padding: 15px 6px;
-    // margin-bottom: 1px;
-    margin: 0.5px;
+    margin-bottom: 1px;
     background: #7971d4;
     text-align: center;
     color: #fff;

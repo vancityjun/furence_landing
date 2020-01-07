@@ -5,6 +5,7 @@ export const Flexbox = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const Container = styled.div`
@@ -12,6 +13,7 @@ export const Container = styled.div`
   max-width: 1350px;
   margin: 0 auto;
 `;
+
 // const StyledComponents = () => {
 //     return (
 //         <div>

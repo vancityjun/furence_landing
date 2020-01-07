@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Title } from "./style";
 import "./style.scss";
 
-const Box = ({ title, list }) => {
+const Box = ({ title, list, col }) => {
   useEffect(() => {
     console.log(list);
   });
@@ -22,7 +22,7 @@ const Box = ({ title, list }) => {
     ));
   };
   return (
-    <div className="folder col3 fadeInUp-scroll">
+    <div className={"col fadeInUp-scroll " + col}>
       <div className="title">
         <Title>{title}</Title>
       </div>
