@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.scss";
+import Header from "./component/Header";
+import ScrollNav from "./component/ScrollNav";
+import Intro from "./component/Intro";
+import Section from "./component/Section";
+import $ from "jquery";
+import useMedia from "use-media";
+import { solutions } from "./solution.json";
 
-function App() {
+const App = () => {
+  const nMobile = useMedia({ minWidth: 600 });
+  useEffect(() => {
+    console.log(solutions);
+    $(window).scroll(function() {
+      // hideObjects();
+      checkObjectsVisibility();
+    });
+
+    const hideObjects = () => {
+      $(".fadeInUp-scroll").css({
+        opacity: 0,
+        transform: "translateY(100px)"
+      });
+    };
+
+    const checkObjectsVisibility = () => {
+      $(".fadeInUp-scroll").each(function(i) {
+        const objectTop = $(this).offset().top;
+        const windowBottom = $(window).scrollTop() + $(window).outerHeight();
+
+        if (windowBottom > objectTop - 100) {
+          $(this).addClass("visible");
+        } else {
+          $(this).removeClass("visible");
+        }
+      });
+    };
+
+    // hideObjects();
+    checkObjectsVisibility();
+  });
+  const Solutions = () => {
+    return solutions.map((solution, i) => (
+      <Section
+        key={i}
+        name={solution.name}
+        desc={solution.desc}
+        logo={solution.logo}
+      />
+    ));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {nMobile ? <ScrollNav solutions={solutions} /> : null}
+      <Header />
+      <Intro />
+      {Solutions()}
     </div>
   );
-}
+};
 
 export default App;

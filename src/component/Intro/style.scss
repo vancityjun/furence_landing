@@ -1,0 +1,20 @@
+@import "../../mixin";
+
+.se01_h {
+  text-align: center;
+  padding: 2% 0;
+}
+.main {
+  .process {
+    width: calc(50% - 1px);
+    padding: 15px 6px;
+    // margin-bottom: 1px;
+    margin: 0.5px;
+    background: #7971d4;
+    text-align: center;
+    color: #fff;
+    @include tablet {
+      width: calc(25% - 1px);
+    }
+  }
+}

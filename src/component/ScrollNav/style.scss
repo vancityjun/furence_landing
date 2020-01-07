@@ -1,0 +1,36 @@
+.scroll_nav {
+  position: fixed;
+  z-index: 1000;
+  top: 30% !important;
+  right: 87% !important;
+  left: 20px !important;
+  li {
+    line-height: 3;
+    font-weight: 700;
+    margin-left: 10px;
+    a {
+      position: relative;
+      &::before {
+        content: "";
+        border: 6px double;
+        width: 1px;
+        height: 1px;
+        display: inline-block;
+        margin-right: 10px;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 20px);
+        margin-left: 20px;
+        bottom: -3px;
+        left: 0;
+        border: 1px solid;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s;
+      }
+    }
+  }
+}
