@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Title } from "./style";
+import { Title, Octagon } from "./style";
 import "./style.scss";
 
 const Box = ({ title, list, col }) => {
@@ -9,16 +9,16 @@ const Box = ({ title, list, col }) => {
   });
   const List = () => {
     return list.map((list, i) => (
-      <li>
+      <Octagon>
         {list.title ? (
           <>
-            <span className="list">{list.title}</span>
-            <span className="octagon">{list.desc}</span>
+            <p>{list.title}</p>
+            <p>{list.desc}</p>
           </>
         ) : (
-          <span className="octagon">{list}</span>
+          <p>{list}</p>
         )}
-      </li>
+      </Octagon>
     ));
   };
   return (
