@@ -9,10 +9,8 @@ const ScrollNav = ({ solutions }) => {
       </li>
     ));
   };
-  const scrollNavHeight = $(".scroll_nav").height();
-  const MarginTop = parseInt(scrollNavHeight / 2);
   return (
-    <ul className="scroll_nav" style={{ marginTop: MarginTop }}>
+    <ul className="scroll_nav">
       <li>
         <a href="# ">Intro</a>
       </li>

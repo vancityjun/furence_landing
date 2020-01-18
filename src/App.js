@@ -11,7 +11,7 @@ import { solutions } from "./solution.json";
 const App = () => {
   const nMobile = useMedia({ minWidth: 600 });
   useEffect(() => {
-    console.log(solutions);
+    // console.log(solutions);
     $(window).scroll(function() {
       // hideObjects();
       checkObjectsVisibility();

@@ -1,9 +1,11 @@
 .scroll_nav {
   position: fixed;
   z-index: 1000;
-  top: 30% !important;
-  right: 87% !important;
-  left: 20px !important;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  mix-blend-mode: difference;
+  color: #fff;
   li {
     line-height: 3;
     font-weight: 700;
