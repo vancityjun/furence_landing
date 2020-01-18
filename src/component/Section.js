@@ -11,13 +11,13 @@ const Section = ({ name, logo, desc }) => {
       case "recsee":
         return "#0e2a3e";
       case "wallts":
-        return "#E9F2F9";
+        return "#e6f2fb";
       case "irsee":
-        return "#f1eaea";
+        return "#e5f5f3";
       case "irems":
-        return "#e7503f";
+        return "#f1d7d5";
       case "conple":
-        return "#250717";
+        return "#f1d6e4";
       default:
         return "#222";
     }

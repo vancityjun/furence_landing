@@ -47,9 +47,6 @@ const Intro = () => {
           <Flexbox>
             <Process />
           </Flexbox>
-          <div className="feature">
-            <span>24시간 365일 전문기술요원이 대기하여 도움을 드립니다.</span>
-          </div>
           {/* <div className="buttons cf">
             <button onClick="location.href='/', '_blank'" className="col3">
               홈페이지 바로가기

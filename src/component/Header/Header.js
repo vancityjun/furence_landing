@@ -16,7 +16,7 @@ const Header = () => {
     let counter = 0;
     const next = () => {
       fx.setText(phrases[counter]).then(() => {
-        setTimeout(next, 2000);
+        setTimeout(next, 2400);
       });
       counter = (counter + 1) % phrases.length;
     };

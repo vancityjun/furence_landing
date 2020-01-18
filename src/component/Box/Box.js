@@ -25,6 +25,27 @@ const Box = ({ name, title, list, col }) => {
         return "#222";
     }
   };
+  const ListStyle = require(`../../img/${name
+    .toLowerCase()
+    .replace(/[^a-zA-Z ]/g, "")}-list.png`);
+  const Octagon = styled.li`
+    line-height: 1.7;
+    margin-bottom: 15px;
+    &:before {
+      content: "";
+      background: url(${ListStyle}) no-repeat;
+      display: inline-block;
+      background-size: contain;
+      width: 16px;
+      height: 20px;
+      transform: translate(0px, 5px);
+      float: left;
+    }
+    p {
+      margin-left: 26px;
+    }
+  `;
+
   const List = () => {
     return list.map((list, i) => (
       <Octagon>
