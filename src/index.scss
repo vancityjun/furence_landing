@@ -23,3 +23,7 @@ li {
 ::-webkit-scrollbar {
   display: none;
 }
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
