@@ -46,6 +46,7 @@ const App = () => {
         name={solution.name}
         desc={solution.desc}
         logo={solution.logo}
+        images={solution.images}
       />
     ));
   };

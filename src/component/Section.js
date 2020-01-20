@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import Box from "./Box";
 import { Container, Flexbox } from "./StyledComponents";
 
-const Section = ({ name, logo, desc }) => {
-  useEffect(() => {});
+const Section = ({ name, logo, desc, images }) => {
+  useEffect(() => {
+    // console.log(images);
+  });
   const Background = name => {
     switch (name.toLowerCase()) {
       case "t-motion":
@@ -28,6 +30,22 @@ const Section = ({ name, logo, desc }) => {
       <Box key={i} name={name} title={desc.title} list={desc.list} col={col} />
     ));
   };
+  const Screens = () => {
+    console.log(images);
+    return images
+      ? images.map(url => {
+          return (
+            <img
+              className="col2"
+              kay={url}
+              src={require(`../img/${url}.png`)}
+              alt="solution"
+              style={{ marginBottom: 40 }}
+            />
+          );
+        })
+      : null;
+  };
   const logoUrl = require(`../img/${logo}.png`);
 
   const alert =
@@ -43,6 +61,7 @@ const Section = ({ name, logo, desc }) => {
           <img src={logoUrl} alt={alert} className="logo" />
         </div>
         <Flexbox>{Boxes()}</Flexbox>
+        <Flexbox>{Screens()}</Flexbox>
       </Container>
     </section>
   );
